@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ title }}</h1>
+
+        <form method="POST">
+            <label for="data">Block Data:</label><br>
+            <textarea id="data" name="data" rows="5" cols="50"></textarea><br><br>
+            <button type="submit">Add Block</button>
+        </form>
+
+        <br>
+        <a href="{{ url_for('index') }}" class="button-link">Back to Blockchain</a>
+    </div>
+</body>
+</html>

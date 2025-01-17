@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ title }}</h1>
+
+        <h2>Blockchain</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>Timestamp</th>
+                    <th>Data</th>
+                    <th>Previous Hash</th>
+                    <th>Current Hash</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for block in chain %}
+                <tr>
+                    <td>{{ block.index }}</td>
+                    <td>{{ block.timestamp }}</td>
+                    <td>{{ block.data }}</td>
+                    <td class="hash-cell">{{ block.previous_hash }}</td>
+                    <td class="hash-cell">{{ block.current_hash }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ url_for('add_block') }}" class="button-link">Add New Block</a>
+    </div>
+</body>
+</html>
