@@ -6,7 +6,7 @@ blockchain = Blockchain()
 
 @app.route('/')
 def index():
-    return render_template('index.html', title='Your Blockchain', chain=blockchain.chain)
+    return render_template('index.html', title='Hash Group 12', chain=blockchain.chain)
 
 @app.route('/add_block', methods=['GET', 'POST'])
 def add_block():
